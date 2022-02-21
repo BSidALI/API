@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Generator as Faker;
 
@@ -13,14 +12,13 @@ class ReviewsFactory extends Factory
      * @return array
      */
     public function definition()
+
     {
         return [
-            'product_id'=>function(){
-                return Product::all()->random(); // product her is model
-            },
-            'customer'=>$faker->name,
-            'review'=>$faker->paragraph,
-            'star'=>$faker->numberBetween(100,200),
+            'product_id'=>$this->faker->numberBetween(1,10),//  need be betwin key id nmber 
+            'customer'=>$this->faker->word,
+            'review'=> $this->faker->paragraph,
+            'star'=>$this->faker->numberBetween(100,200),
         ];
     }
 }

@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use  API\database\seeders\ProductSeeder as Pseeder;
+use  API\database\seeders\ReviewsSeeder as Rseeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,8 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        factory(App\Product::class, 10)->create();
+       //\App\Models\Product::factory(10)->create();
+        \App\Models\Reviews::factory(10)->create();
     }
 }
