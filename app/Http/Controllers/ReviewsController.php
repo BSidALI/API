@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reviews;
+use App\Models\Product;
 use App\Http\Requests\StoreReviewsRequest;
 use App\Http\Requests\UpdateReviewsRequest;
+
+use App\Http\Resources\Product\Review\PreviewResource;
+use App\Http\Resources\Product\Review\ReviewCollection;
+
 
 class ReviewsController extends Controller
 {
@@ -13,9 +18,10 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Product $product)
+    {    
+        return ReviewCollection::collection($product->reviews) ;
+        
     }
 
     /**
@@ -45,10 +51,11 @@ class ReviewsController extends Controller
      * @param  \App\Models\Reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function show(Reviews $reviews)
-    {
-        //
+    public function show($PId,$RId){
+                
+        return new PreviewResource(Reviews::find($RId));
     }
+   
 
     /**
      * Show the form for editing the specified resource.
@@ -56,9 +63,9 @@ class ReviewsController extends Controller
      * @param  \App\Models\Reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reviews $reviews)
+    public function edit()
     {
-        //
+       
     }
 
     /**

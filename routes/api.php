@@ -18,11 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource('/Products','ProductController');
+Route::apiResource('/products','ProductController');
 
-Route::group(['prifix'=>'products'],function(){
+Route::group(['prifix'=>'/Products'],function(){
 
     Route::apiResource
-    ('{product}/reviews','ReviewsController');
+    ('/Products/{product}/reviews/{reviews}','ReviewsController');
     });
     
     

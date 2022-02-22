@@ -24,6 +24,7 @@ class ProductResource extends JsonResource
             'rating'=>$this->reviews->count()>0?round ($this->reviews->sum('star')/$this->reviews->count())
             // if connection is no
             :"noting rating yet",
+            'where i m '=> 'ProductResource',
             // now u can add extra work what will hapen and what this one can acc in same page
             // exp her u can add href link  who will have name and link to generat page link
             // this one is the name u will see in html
