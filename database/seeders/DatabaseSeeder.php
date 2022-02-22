@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-       //\App\Models\Product::factory(10)->create();
-        \App\Models\Reviews::factory(10)->create();
+    {// entry 1 after u need entry 2 becouse thy have fogeting key
+       //\App\Models\Product::factory(100)->create();
+       \App\Models\Reviews::factory(100)->create();
     }
 }

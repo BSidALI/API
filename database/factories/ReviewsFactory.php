@@ -15,7 +15,7 @@ class ReviewsFactory extends Factory
 
     {
         return [
-            'product_id'=>$this->faker->numberBetween(1,10),//  need be betwin key id nmber 
+            'product_id'=>$this->faker->numberBetween(1, 20),//  need be betwin key id nmber 
             'customer'=>$this->faker->word,
             'review'=> $this->faker->paragraph,
             'star'=>$this->faker->numberBetween(100,200),
