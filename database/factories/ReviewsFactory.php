@@ -18,7 +18,7 @@ class ReviewsFactory extends Factory
             'product_id'=>$this->faker->numberBetween(1, 20),//  need be betwin key id nmber 
             'customer'=>$this->faker->word,
             'review'=> $this->faker->paragraph,
-            'star'=>$this->faker->numberBetween(100,200),
+            'star'=>$this->faker->numberBetween(0,5),
         ];
     }
 }
